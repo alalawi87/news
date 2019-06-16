@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { GlobalveriableProvider } from "../../providers/globalveriable/globalveriable";
 import { ShowResultPage} from '../show-result/show-result';
-
+import { PageNewsPage} from '../page-news/page-news';
 /**
  * Generated class for the ShowStudentPage page.
  *
@@ -12,15 +12,16 @@ import { ShowResultPage} from '../show-result/show-result';
 
 @Component({
   selector: 'page-show-student',
-  templateUrl: 'show-student.html',
+  templateUrl: 'show.html',
 })
-export class ShowStudentPage {
+export class ShowPage {
 
 studentArray:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public global: GlobalveriableProvider) {
     this.studentArray=  global.studentArray;
    //this.studentArray=  global.json;
     //console.log(global.json[0].course);
+    console.log( global.json.articles[0].author);
   }
 
   ionViewDidLoad() {
@@ -32,6 +33,9 @@ studentArray:any;
       detailstudent(item,i){
         this.navCtrl.push(ShowResultPage,{cte:item})
         }
-      
+        pagenews(item,i){
+          this.navCtrl.push(PageNewsPage,{cte:item})
+          }
+        
     
 }

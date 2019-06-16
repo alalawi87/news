@@ -1,0 +1,27 @@
+<!--
+  Generated template for the ShowStudentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>اخر الاخبار</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding dir="rtl">
+    <ion-list > 
+    
+      <ion-item-sliding *ngFor="let item of global.json.articles; let i=index" (click)="pagenews(item,i)"> 
+      <ion-item>  
+        {{item.author}} <br> {{item.title}}   <br> {{item.publishedAt}}</ion-item>
+
+    
+      </ion-item-sliding>
+      </ion-list>
+  
+
+ 
+     
+</ion-content>

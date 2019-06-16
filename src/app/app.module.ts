@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -7,17 +7,18 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ShowResultPage } from '../pages/show-result/show-result';
-import { ShowStudentPage } from '../pages/show-student/show-student';
+import { ShowPage } from '../pages/show/show';
 import { AddGradePage } from '../pages/add-grade/add-grade';
+import { PageNewsPage } from '../pages/page-news/page-news';
 import { AddStudentPage } from '../pages/add-student/add-student';
 import { GlobalveriableProvider } from '../providers/globalveriable/globalveriable';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { File } from '@ionic-native/file';
 import { FileProvider } from '../providers/file/file';
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage, ShowResultPage, ShowStudentPage, AddGradePage,AddStudentPage
+    HomePage, ShowResultPage, ShowPage, AddGradePage,AddStudentPage,PageNewsPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,7 @@ import { FileProvider } from '../providers/file/file';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage, ShowResultPage, ShowStudentPage, AddGradePage,AddStudentPage
+    HomePage, ShowResultPage, ShowPage, AddGradePage,AddStudentPage,PageNewsPage
   ],
   providers: [
     StatusBar,
@@ -37,6 +38,7 @@ import { FileProvider } from '../providers/file/file';
     HttpClientModule,
     FileProvider,
     
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}
